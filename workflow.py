@@ -1,8 +1,7 @@
-from system_instructions import MAIN_WRITER_SYSTEM_INSTRUCTIONS
+from system_instructions import MAIN_WRITER_SYSTEM_INSTRUCTIONS, FACT_CHECKER_SYSTEM_INSTRUCTIONS, PHILOSOPHER_SYSTEM_INSTRUCTIONS, EDITOR_SYSTEM_INSTRUCTIONS
 from dotenv import load_dotenv
 import os
 from google import genai
-from system_instructions import *
 
 # 0. Load env vars and initialize Gemini client
 load_dotenv()
@@ -17,7 +16,7 @@ main_writer = client.interactions.create(
     tools=[{"type": "google_search"}]
 )
 main_writer_output = main_writer.output_text
-with open('output_1.txt', 'w') as f:
+with open('output_1.md', 'w', encoding="utf-8") as f:
     f.write(main_writer_output)
 
 # 2. Fact checker agent revises draft
@@ -27,8 +26,8 @@ fact_checker = client.interactions.create(
     system_instruction=FACT_CHECKER_SYSTEM_INSTRUCTIONS,
     tools=[{"type": "google_search"}]
 )
-fact_checker_output = main_writer.output_text
-with open('output_2.txt', 'w') as f:
+fact_checker_output = fact_checker.output_text
+with open('output_2.md', 'w', encoding="utf-8") as f:
     f.write(fact_checker_output)
 
 # 3. Philosopher agent makes a structured reflection on freedom
@@ -37,6 +36,33 @@ philosopher = client.interactions.create(
     input=f"Execute your system instructions. Fact checker output: {fact_checker_output}",
     system_instruction=PHILOSOPHER_SYSTEM_INSTRUCTIONS
 )
-philosopher_output = main_writer.output_text
-with open('output_3.txt', 'w') as f:
+philosopher_output = philosopher.output_text
+with open('output_3.md', 'w', encoding="utf-8") as f:
     f.write(philosopher_output)
+
+# 4. Editor agent edits the output
+content_to_edit = f'''
+    {fact_checker_output}
+
+    {philosopher_output}
+'''
+
+editor = client.interactions.create(
+    model="gemini-2.5-flash",
+    input=f"Execute your system instructions. Content to edit: {content_to_edit}",
+    system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
+)
+editor_output = editor.output_text
+with open('output_4.md', 'w', encoding="utf-8") as f:
+    f.write(editor_output)
+
+final_output = f'''
+    {editor_output}
+
+    * The above newsletter is AI-generated. However, the underlying multi-agent
+    system employs a robust system of cross-checks. *
+'''
+
+# 5. Saving output to MongoDB
+
+# 6. Emailing output to subscribers and sharing in LinkedIn
