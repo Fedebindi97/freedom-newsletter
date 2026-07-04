@@ -11,7 +11,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 # 1. Main writer agent creates first draft
 main_writer = client.interactions.create(
-    model="gemini-2.5-pro",
+    model="gemini-3.1-pro-preview",
     input="Execute your system instructions.",
     system_instruction=MAIN_WRITER_SYSTEM_INSTRUCTIONS,
     tools=[{"type": "google_search"}]
@@ -22,7 +22,7 @@ with open('output_1.md', 'w', encoding="utf-8") as f:
 
 # 2. Fact checker agent revises draft
 fact_checker = client.interactions.create(
-    model="gemini-2.5-flash",
+    model="gemini-3.5-flash",
     input=main_writer_output,
     system_instruction=FACT_CHECKER_SYSTEM_INSTRUCTIONS,
     tools=[{"type": "google_search"}]
@@ -33,7 +33,7 @@ with open('output_2.md', 'w', encoding="utf-8") as f:
 
 # 3. Philosopher agent makes a structured reflection on freedom
 philosopher = client.interactions.create(
-    model="gemini-2.5-pro",
+    model="gemini-3.1-pro-preview",
     input=fact_checker_output,
     system_instruction=PHILOSOPHER_SYSTEM_INSTRUCTIONS
 )
@@ -44,14 +44,14 @@ with open('output_3.md', 'w', encoding="utf-8") as f:
 # 4. Editor agent edits the outputs of the fact checker and philospher
 
 editor_1 = client.interactions.create(
-    model="gemini-2.5-flash",
+    model="gemini-3.5-flash",
     input=fact_checker_output,
     system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
 )
 editor_output_news = editor_1.output_text
 
 editor_2 = client.interactions.create(
-    model="gemini-2.5-flash",
+    model="gemini-3.5-flash",
     input=philosopher_output,
     system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
 )
@@ -75,8 +75,9 @@ Stay free out there,
 
 Fede & Nika
 
-*The above newsletter is AI-generated. However, the underlying multi-agent
-system employs a robust system of cross-checks.*
+*The above newsletter is AI-generated. However, the [underlying multi-agent
+system](https://federicobindi.com/projects/nika-newsletter) employs a robust 
+system of cross-checks.*
 '''
 with open('output_4.md', 'w', encoding="utf-8") as f:
     f.write(final_output)
@@ -84,10 +85,7 @@ with open('output_4.md', 'w', encoding="utf-8") as f:
 # 5. Saving output to MongoDB
 strucured_output = {
     'ts':ts,
-    'first_draft_body':main_writer_output,
-    'revised_body':fact_checker_output,
-    'philosophical_reflection':philosopher_output,
-    'final_text':final_output
+    'text_text':final_output
 }
 
 # 6. Emailing output to subscribers and sharing in LinkedIn
