@@ -1,4 +1,4 @@
-from system_instructions import MAIN_WRITER_SYSTEM_INSTRUCTIONS, FACT_CHECKER_SYSTEM_INSTRUCTIONS, PHILOSOPHER_SYSTEM_INSTRUCTIONS, EDITOR_SYSTEM_INSTRUCTIONS
+from system_instructions import MAIN_WRITER_SYSTEM_INSTRUCTIONS, LINK_INJECTER_SYSTEM_INSTRUCTIONS, PHILOSOPHER_SYSTEM_INSTRUCTIONS, EDITOR_SYSTEM_INSTRUCTIONS
 from time_objects import today, today_minus_seven, ts
 from dotenv import load_dotenv
 import os
@@ -17,35 +17,46 @@ main_writer = client.interactions.create(
     tools=[{"type": "google_search"}]
 )
 main_writer_output = main_writer.output_text
-with open('output_1.md', 'w', encoding="utf-8") as f:
-    f.write(main_writer_output)
+main_writer_links = []
+for step in main_writer.steps:
+    if step.type == "model_output":
+        for content_block in step.content:
+            if content_block.type == "text":
+                if content_block.annotations:
+                    for annotation in content_block.annotations:
+                        if annotation.type == "url_citation":
+                            cited_text = content_block.text[annotation.start_index:annotation.end_index]
+                            main_writer_links.append({'url':annotation.url,'text':cited_text})
 
-# 2. Fact checker agent revises draft
-fact_checker = client.interactions.create(
+# 2. Link injecter injects links
+link_injecter = client.interactions.create(
     model="gemini-3.5-flash",
-    input=main_writer_output,
-    system_instruction=FACT_CHECKER_SYSTEM_INSTRUCTIONS,
-    tools=[{"type": "google_search"}]
+    input=f'''
+        MAIN WRITER DRAFT:
+        {main_writer_output}
+
+        REFERENCES:
+        {main_writer_links}
+    ''',
+    system_instruction=LINK_INJECTER_SYSTEM_INSTRUCTIONS,
 )
-fact_checker_output = fact_checker.output_text
+link_injecter_output = link_injecter.output_text
 with open('output_2.md', 'w', encoding="utf-8") as f:
-    f.write(fact_checker_output)
+    f.write(link_injecter_output)
 
 # 3. Philosopher agent makes a structured reflection on freedom
 philosopher = client.interactions.create(
     model="gemini-3.1-pro-preview",
-    input=fact_checker_output,
+    input=link_injecter_output,
     system_instruction=PHILOSOPHER_SYSTEM_INSTRUCTIONS
 )
 philosopher_output = philosopher.output_text
-with open('output_3.md', 'w', encoding="utf-8") as f:
-    f.write(philosopher_output)
 
 # 4. Editor agent edits the outputs of the fact checker and philospher
 
 editor_1 = client.interactions.create(
     model="gemini-3.5-flash",
-    input=fact_checker_output,
+    input=link_injecter_output,
     system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
 )
 editor_output_news = editor_1.output_text
@@ -56,7 +67,6 @@ editor_2 = client.interactions.create(
     system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
 )
 editor_output_reflections = editor_2.output_text
-
 
 final_output = f'''
 **NIKA NEWSLETTER - WEEK OF {today_minus_seven} TO {today}**
