@@ -114,7 +114,8 @@ You will need to INJECT THE LINKS IN THE DRAFT IN MARKDOWN FORMAT, such as:
 "According to the [UN Security Council](link to news), this and that happened..."
 
 Place links strategically. Each bullet point should have at least one link;
-links MUST BE PRESENT in your output.
+links MUST BE PRESENT in your output. Make sure to copypaste links correctly,
+so as not to break them.
 
 Your output will be the revised draft in Markdown format, and nothing else. 
 
