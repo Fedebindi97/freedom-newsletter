@@ -1,41 +1,54 @@
 
-**NIKA NEWSLETTER - WEEK OF 2026-06-27 TO 2026-07-04**
+**NIKA NEWSLETTER - WEEK OF 2026-06-28 TO 2026-07-05**
 
 Welcome to the Nika newsletter, focusing on the recent developments on freedom around the world.
 
 # WHAT'S NEW
 
 ## SECURITY AND CONFLICT
-💥 Ukraine saw a sharp rise in civilian casualties after intense Russian attacks on Kyiv. A July 2 drone and missile assault killed at least 25 people and injured over 90, hitting residential buildings. [The UN reports a 40% surge in civilian casualties from Russian air attacks in the last 18 months](https://www.united24.media/news/un-reports-40-surge-in-ukrainian-civilian-casualties-from-russian-air-attacks).
-🕊️ In the Middle East, an Israeli drone strike killed two Palestinian siblings in a Gaza displacement camp on June 27, despite a supposed ceasefire. Simultaneously, Israeli settler groups are reportedly advancing a plan for [100 new outposts in the occupied West Bank](https://truthout.org/articles/israeli-settlers-are-pushing-a-plan-to-establish-100-new-outposts-in-west-bank/), further fragmenting Palestinian territory.
-🚨 The UN warns of a "human rights catastrophe" in Sudan's El Obeid, under siege for 18 months. June saw relentless drone strikes by both Sudanese Armed Forces and RSF [kill at least 45 civilians and target critical infrastructure](https://www.unannews.com/sudan-s-people-subject-to-relentless-drone-strikes-in-el-obeid/).
+
+🚀 A massive Russian missile and drone barrage [struck Kyiv and surrounding regions](https://www.theguardian.com/world/2026/jul/02/russia-launches-massive-drone-and-missile-attack-on-kyiv), killing dozens of civilians and destroyin g residential buildings, continuing to violate citizens' basic right to life and self-determination.
+
+🏚️ The Israeli military has intensified operations in Gaza, killing entire families in an increasingly restricted urban battlefield where trapped civilians have [no mobility or safe refuge](https://www.aljazeera.com/news/2026/6/21/israeli-strikes-kill-entire-families-in-gaza).
+
+🚨 The UN has issued a "red alert" for the besieged city of El Obeid in Sudan, where paramilitary drone strikes and 18 months of warfare are starving the population, precipitating a [severe humanitarian catastrophe](https://www.dw.com/en/sudan-crisis).
 
 ## DEMOCRACY AND VOTING
-🏛️ Tunisia's President Kais Saied continues to dismantle democratic institutions and suppress dissent, criminalizing civil society organizations. Activists, journalists, and lawyers face imprisonment, with [recent targets including anti-racism campaigners and migrant/women's rights groups](https://globalissues.org/news/2026/07/01/32822).
-⛓️ Belarus's Alexander Lukashenko pardoned 28 political prisoners, a welcome step for those released. However, human rights groups note hundreds remain incarcerated, viewing the move as an attempt to improve Western ties, [not a fundamental shift in repressive policies](https://www.washingtonpost.com/world/2026/07/01/belarus-authoritarian-leader-pardons-28-political-prisoners-effort-ease-ties-with-west/0761e564-37a5-11ef-8418-24d64215169a_story.html).
-✅ Amid US voting rights challenges, New Jersey enacted the "John R. Lewis Voter Empowerment Act." The new law strengthens protections against voter suppression and intimidation, and [improves access to voting materials for citizens with limited English proficiency](https://www.wrnjradio.com/2026/07/04/new-jersey-enacts-john-r-lewis-voter-empowerment-act/).
+
+🗳️ The FBI has deployed over 200 analysts to "surge" an investigation into the 2020 election in Fulton County, Georgia, breathing new life into long-debunked fraud claims that [intimidate election workers and threaten democratic institutions](https://www.theguardian.com/us-news/2026/jul/02/fbi-orders-staffers-georgia-2020-election-investigation).
+
+📜 Critics warn the proposed US SAVE America Act will heavily restrict the franchise, disenfranchising [minorities and military personnel](https://www.newsfromthestates.com/article/voting-rights-were-republican-thing-with-save-act-theyre-now-gops-rearview-mirror) by making it significantly harder to cast a ballot.
+
+🗣️ Ahead of upcoming elections, international monitors warn that Algeria's restrictions on political discourse and free expression risk [robbing citizens of their democratic sovereignty](https://www.article19.org/resources/algeria-freedom-of-expression-is-essential-to-democratic-elections/).
 
 ## FREEDOM OF EXPRESSION
-⛔ Ahead of the NATO summit, Turkish authorities intensified a crackdown on civil liberties. Ankara imposed a 13-day ban on public demonstrations, and [police arrested hundreds, including activists, lawyers, and journalists](https://www.hrw.org/news/2026/06/25/turkiye-crackdown-ahead-nato-summit).
-✍️ Iranian political journalist Omid Faraghat was arrested on June 29th, charged with 'disturbing public opinion' and 'acting against national security'. This marks his third prosecution for critical reporting, making him [the seventh journalist imprisoned in Iran](https://www.ifj.org/media-centre/news/detail/category/press-releases/article/iran-political-journalist-arrested).
-📱 China launched a three-month internet censorship campaign, "Qinglang," officially to rectify "chaos in account name information." This campaign, however, tightens the CCP's control over online discourse, [further suppressing dissenting voices and cultural expression, particularly impacting Tibetans](https://www.savetibet.org/china-launches-three-month-crackdown-on-the-internet/).
+
+📱 Saudi authorities are arresting and sentencing religious pilgrims and visitors to lengthy prison terms over simple social media posts, crushing [free digital expression](https://www.amnesty.org/en/latest/news/2026/06/visitors-to-saudi-arabia-imprisoned-for-social-media-posts/).
+
+🔒 Malaysia's proposed Cybercrimes Bill 2026 has raised alarms among privacy advocates, who warn it uses national security to expand state surveillance and threaten [online autonomy and independent expression](https://www.article19.org/resources/malaysia-cybercrimes-bill-2026-is-a-threat-to-free-expression-and-privacy/).
+
+📢 The UN Secretary-General has condemned the detention of civic and political actors in Uganda, urging the government to restore basic constitutional rights, [liberty and independent media](https://www.un.org/sg/en/content/sg/note-correspondents/2026-07-02/note-correspondents-recent-developments-uganda).
 
 ## ECONOMIC POWER
-💸 A report found 88 large US corporations paid no federal income tax in 2025, while spending $852 million on lobbying and campaign contributions. This creates a ["self-reinforcing loop" where corporate cash influences policy for further tax breaks](https://www.citizen.org/news/corporate-tax-dodgers-lobbying-and-political-spending-records-reveal-self-reinforcing-loop/).
-⚖️ A Swedish court ordered Google to pay nearly $2 billion to Pricerunner for abusing its market dominance. The ruling, a significant decision against big tech, found Google favored its own shopping service, [harming competitors and consumers](https://www.latimes.com/business/story/2026-07-01/google-hit-with-2-billion-antitrust-judgment-for-skewing-shopping-searches).
-🤖 Leading AI companies are escalating lobbying to shape favorable regulations. OpenAI, for instance, employs a "reverse federalism" strategy, lobbying states to create de facto national standards, highlighting [AI's growing political influence and efforts to preempt federal oversight](https://www.politico.com/news/2026/05/20/openai-political-strategy-00158933).
+
+🤖 To counter the extreme concentration of computational power and wealth, US lawmakers are debating a 50% tax on large AI firms to fund a public sovereign wealth fund and build [empowering collective structures](https://apnews.com/article/bernie-sanders-unveils-plan-public-ownership-ai-companies).
+
+📈 A new analysis reveals that Europe's 100 largest corporations allocate 70% of their profits to shareholder dividends, enriching a wealthy elite at the expense of workers and [widening the continent's structural inequality](https://www.oxfam.de/system/files/documents/oxfam-people-power-profits-planet-report.pdf).
+
+🌍 Environmental defenders in Latin America are calling for binding global rules against "corporate capture," warning that unchecked multinational monopolies continue to [drive aggressive resource extractivism](https://www.escr-net.org/news/2026/no-democracy-without-rules-corporate-power) and disempower local communities.
 
 # WHAT WE THINK
 
-💥 The ability to choose a path, any path, presupposes the ground on which to walk. This week's events in Ukraine, Gaza, and Sudan remind us that the most profound assault on freedom is the raw, physical violence that renders all values and choices meaningless. When a home, a market, or a camp for the displaced can be obliterated from the sky, the power imbalance is absolute, and human agency is reduced to the mere struggle for survival.
+🔒 The physical confinement of civilians in conflict zones mirrors a broader democratic paralysis. As state surveillance and engineered falsehoods trap citizens in fabricated realities, our shared truth is dismantled. When both physical movement and reliable information are blocked, the capacity for independent, uncoerced choice is extinguished.
 
-⚖️ Beyond the battlefield, a quieter war is waged over the architecture of our choices. When corporations write the tax laws that exempt them, or when technology companies dictate the regulations that govern them, the field of play is tilted. This engineering of our political and digital worlds, seen from the US to China, aims to make us predictable, replacing the messy, uncertain prospect of genuine choice with a carefully managed reality where our paths are subtly pre-determined for us.
+💰 This erosion of agency is accelerated by the extreme concentration of wealth and technological control. When corporations and oligarchs dictate the future while exploiting vulnerable communities, individual power is outsourced to the highest bidder. Without robust social guardrails to check this economic dominance, personal autonomy is reduced to a commodity.
 
-🤝 Yet, freedom is not a state of nature but a collective achievement, built and defended through shared institutions. The strengthening of voting rights in New Jersey is not a minor tweak but a deliberate act of constructing a more inclusive power structure. Similarly, a court holding a tech monopoly to account is a reaffirmation that collective rules can challenge concentrated power. These acts remind us that solidarity—the conscious decision to build systems that empower one another—remains our most potent tool against domination.
+🤝 True liberty cannot exist in a vacuum; it is a collective practice. From safeguarding the ballot box to ensuring the equitable distribution of artificial intelligence, human flourishing requires defending robust public institutions. We must stand together to preserve a shared, factual reality that empowers the many rather than fortifying the few.
 
 Stay free out there,
 
 Fede & Nika
 
-*The above newsletter is AI-generated. However, the underlying multi-agent
-system employs a robust system of cross-checks.*
+*The above newsletter is AI-generated. However, the [underlying multi-agent
+system](https://federicobindi.com/projects/nika-newsletter) employs a robust 
+system of cross-checks.*
