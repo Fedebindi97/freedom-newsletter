@@ -1,13 +1,33 @@
-from system_instructions import MAIN_WRITER_SYSTEM_INSTRUCTIONS, LINK_INJECTER_SYSTEM_INSTRUCTIONS, PHILOSOPHER_SYSTEM_INSTRUCTIONS, EDITOR_SYSTEM_INSTRUCTIONS
+from system_instructions import MAIN_WRITER_SYSTEM_INSTRUCTIONS, LINK_INJECTER_SYSTEM_INSTRUCTIONS, PHILOSOPHER_SYSTEM_INSTRUCTIONS, EDITOR_SYSTEM_INSTRUCTIONS, SUMMARIZER_SYSTEM_INSTRUCTIONS
 from time_objects import today, today_minus_seven, ts
 from dotenv import load_dotenv
 import os
 from google import genai
+from pymongo import MongoClient
 
-# 0. Load env vars and initialize Gemini client
+# 0. Load env vars and initialize Gemini and PyMongo clients
 load_dotenv()
+
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 client = genai.Client(api_key=GEMINI_API_KEY)
+
+MONGO_PASSWORD = os.environ["MONGO_PASSWORD"]
+conn_string = f'mongodb+srv://bindifederico_db_user:{MONGO_PASSWORD}@cluster0.nndb8ya.mongodb.net/?appName=Cluster0&compressors=zlib'
+mongo_client: MongoClient = MongoClient(conn_string)
+database = mongo_client.get_database("nika-newsletter")
+collection = database['newsletter-texts']
+
+# 0. Summarizer agent summarizes previous issues of the newsletter
+previous_issues = database["newsletter-texts"].find({}, {"ts":1, "text": 1, "_id": 0}).sort("ts", -1).limit(3).to_list()
+summarizer = client.interactions.create(
+    model="gemini-3.5-flash",
+    input=previous_issues,
+    system_instruction=SUMMARIZER_SYSTEM_INSTRUCTIONS,
+    tools=[{"type": "google_search"}]
+)
+summarizer_output = summarizer.output_text
+with open('output_0.md', 'w', encoding="utf-8") as f:
+    f.write(summarizer_output)
 
 # 1. Main writer agent creates first draft
 main_writer = client.interactions.create(
@@ -47,12 +67,18 @@ with open('output_2.md', 'w', encoding="utf-8") as f:
 # 3. Philosopher agent makes a structured reflection on freedom
 philosopher = client.interactions.create(
     model="gemini-3.1-pro-preview",
-    input=link_injecter_output,
+    input=f'''
+    CURRENT ISSUE:
+    {link_injecter_output}
+
+    SUMMARY OF PREVIOUS ISSUES:
+    {summarizer_output}
+    ''',
     system_instruction=PHILOSOPHER_SYSTEM_INSTRUCTIONS
 )
 philosopher_output = philosopher.output_text
 
-# 4. Editor agent edits the outputs of the fact checker and philospher
+# 4. Editor agents edit the outputs of the fact checker and philospher
 
 editor_1 = client.interactions.create(
     model="gemini-3.5-flash",
@@ -93,9 +119,10 @@ with open('output_4.md', 'w', encoding="utf-8") as f:
     f.write(final_output)
 
 # 5. Saving output to MongoDB
-strucured_output = {
+structured_output = {
     'ts':ts,
-    'text_text':final_output
+    'text':final_output
 }
+#result = collection.insert_one(structured_output)
 
 # 6. Emailing output to subscribers and sharing in LinkedIn
