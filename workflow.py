@@ -9,20 +9,20 @@ from mailchimp_marketing import Client
 
 
 # 0. Load env vars and initialize Gemini, PyMongo and Mailchimp clients
-load_dotenv()
+#load_dotenv()
 
-GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
 
-MONGO_PASSWORD = os.environ["MONGO_PASSWORD"]
+MONGO_PASSWORD = os.getenv("MONGO_PASSWORD")
 conn_string = f'mongodb+srv://bindifederico_db_user:{MONGO_PASSWORD}@cluster0.nndb8ya.mongodb.net/?appName=Cluster0&compressors=zlib'
 mongo_client: MongoClient = MongoClient(conn_string)
 database = mongo_client.get_database("nika-newsletter")
 collection = database['newsletter-texts']
 
-MAILCHIMP_API_KEY = os.environ["MAILCHIMP_API_KEY"]
-MAILCHIMP_SERVER_PREFIX = os.environ["MAILCHIMP_SERVER_PREFIX"]
-AUDIENCE_ID = os.environ["MAILCHIMP_AUDIENCE_ID"]
+MAILCHIMP_API_KEY = os.getenv("MAILCHIMP_API_KEY")
+MAILCHIMP_SERVER_PREFIX = os.getenv("MAILCHIMP_SERVER_PREFIX")
+AUDIENCE_ID = os.getenv("MAILCHIMP_AUDIENCE_ID")
 mailchimp_client = Client()
 mailchimp_client.set_config({
     "api_key": MAILCHIMP_API_KEY,
