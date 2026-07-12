@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install python-dotenv google-genai pymongo markdown mailchimp-marketing
+          pip install python-dotenv google-genai pymongo markdown mailchimp-marketing certifi
 
       - name: Run script
         env:

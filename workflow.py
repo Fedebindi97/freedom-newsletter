@@ -6,6 +6,7 @@ from google import genai
 from pymongo import MongoClient
 import markdown
 from mailchimp_marketing import Client
+import certifi
 
 
 # 0. Load env vars and initialize Gemini, PyMongo and Mailchimp clients
@@ -16,7 +17,8 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 MONGO_PASSWORD = os.getenv("MONGO_PASSWORD")
 conn_string = f'mongodb+srv://bindifederico_db_user:{MONGO_PASSWORD}@cluster0.nndb8ya.mongodb.net/?appName=Cluster0&compressors=zlib'
-mongo_client: MongoClient = MongoClient(conn_string)
+ca = certifi.where()
+mongo_client = MongoClient(conn_string, tlsCAFile=ca)
 database = mongo_client.get_database("nika-newsletter")
 collection = database['newsletter-texts']
 
