@@ -6,7 +6,7 @@ on:
   workflow_dispatch: 
 
 jobs:
-  scrape_and_message:
+  prepare_newsletter_and_send:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
