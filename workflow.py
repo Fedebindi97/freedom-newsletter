@@ -105,7 +105,7 @@ editor_2 = client.interactions.create(
 editor_output_reflections = editor_2.output_text
 
 final_output = f'''
-Welcome to the Nika newsletter, focusing on the recent developments on freedom around the world.
+Welcome to the Nika newsletter for the week of {today_minus_seven} to {today}, focusing on the recent developments on freedom around the world.
 
 # WHAT'S NEW
 
