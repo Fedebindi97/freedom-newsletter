@@ -117,7 +117,7 @@ Welcome to the Nika newsletter for the week of {today_minus_seven} to {today}, f
 
 Stay free out there,
 
-Fede & Nika
+[Fede](https://federicobindi.com) & Nika
 
 *The above newsletter is AI-generated. However, the [underlying multi-agent
 system](https://federicobindi.com/projects/nika-newsletter) employs a robust 
