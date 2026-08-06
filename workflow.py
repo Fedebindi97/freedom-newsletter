@@ -50,6 +50,7 @@ main_writer = client.interactions.create(
 )
 main_writer_output = main_writer.output_text
 main_writer_links = []
+main_writer_urls = []
 for step in main_writer.steps:
     if step.type == "model_output":
         for content_block in step.content:
@@ -59,6 +60,7 @@ for step in main_writer.steps:
                         if annotation.type == "url_citation":
                             cited_text = content_block.text[annotation.start_index:annotation.end_index]
                             main_writer_links.append({'url':annotation.url,'text':cited_text})
+                            main_writer_urls.append(annotation.url)
 
 # 2. Link injecter injects links
 link_injecter = client.interactions.create(
@@ -127,7 +129,8 @@ system of cross-checks.*
 # 5. Saving output to MongoDB
 structured_output = {
     'ts':ts,
-    'text':final_output
+    'text':final_output,
+    'urls':str(main_writer_urls)
 }
 result = collection.insert_one(structured_output)
 
@@ -174,3 +177,5 @@ campaign = mailchimp_client.campaigns.create(campaign_payload)
 campaign_id = campaign["id"]
 mailchimp_client.campaigns.set_content(campaign_id, {"html": compiled_html})
 mailchimp_client.campaigns.send(campaign_id)
+#with open("output.md", "w", encoding="utf-8") as file:
+    #file.write(final_output)

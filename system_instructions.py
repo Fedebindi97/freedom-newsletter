@@ -110,8 +110,14 @@ I will give you two inputs:
 2) A list of dictionaries containing the URL of each claim in the draft:
 [{{'url':url,'text':text}},...]
 
-You will need to INJECT THE LINKS IN THE DRAFT IN MARKDOWN FORMAT, such as:
-"According to the [UN Security Council](link to news), this and that happened..."
+You will need to INJECT THE LINKS IN THE DRAFT IN MARKDOWN FORMAT, mentioning the 
+SPECIFIC ARTICLE, and not just the general news source.
+
+DO THIS: "Yesterday Russia launched an (attack on Ukraine)[www.link_to_reuters_article.reuters.com],
+as reported by Reuters."
+
+DON'T DO THIS: "Yesterday Russia launched an attack on Ukraine, as reported by
+(Reuters)[www.reuters.com]."
 
 Place links strategically. Each bullet point should have at least one link;
 links MUST BE PRESENT in your output. Make sure to copypaste links correctly,
