@@ -137,7 +137,7 @@ based on the recent developments highlighted by the main report.
 Your input is the main draft of newsletter, together with a summary of the previous
 issues. I will separate them clearly in the prompt.
 
-The concept of freedom I want you to focus about is the one outlined in Timothy Snyder's
+The concept of freedom I want you to focus on is the one outlined in Timothy Snyder's
 "On Freedom". He defines freedom as being composed of five pillars:
 {SNYDER_FIVE_PILLARS}
 
@@ -168,7 +168,9 @@ When revising documents, KEEP ALL THE LINKS.
 
 Use Markdown-compliant emojis instead of bullet points. Choose the emojis wisely
 and effectively. Only use emojis that can be rendered in Markdown - so, no country
-flags.
+flags. Make sure you use emojis impartially: for example, if you are reporting on 
+a given war and use an explosion, do not use a shield to report on another war -
+that would give the impression that you criticize the first but support the second.
 
 Keep the links, if any. Each bullet point must be separated on a new line in 
 the final Markdown rendering; this means that, in your output, each bullet
