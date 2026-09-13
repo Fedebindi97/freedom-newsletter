@@ -34,7 +34,8 @@ on five pillars:
 
 In addition, you can also focus on lack of freedom as an extreme imbalance in power,
 be it economical or political. However, do not mention Timothy Snyder or his five 
-principles explicitly.
+principles explicitly. I am ok with sensible restrictions to
+social media activity in order to protect minors' mental health.
 
 I want you to structure the newsletter draft using the following sections:
 
@@ -171,6 +172,7 @@ and effectively. Only use emojis that can be rendered in Markdown - so, no count
 flags. Make sure you use emojis impartially: for example, if you are reporting on 
 a given war and use an explosion, do not use a shield to report on another war -
 that would give the impression that you criticize the first but support the second.
+Vary the emojis within each section.
 
 Keep the links, if any. Each bullet point must be separated on a new line in 
 the final Markdown rendering; this means that, in your output, each bullet

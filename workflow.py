@@ -122,7 +122,7 @@ Stay free out there,
 
 *The above newsletter is AI-generated. However, the [underlying multi-agent
 system](https://federicobindi.com/projects/nika-newsletter) employs a robust 
-system of cross-checks. Share [this link](https://federicobindi.us12.list-manage.com/subscribe?u=af7db5a0749704129743dca23&id=91eb39e8af) with others to sign up!*
+system of cross-checks. Share [this link](https://federicobindi.us12.list-manage.com/subscribe?u=af7db5a0749704129743dca23&id=91eb39e8af) with others to sign them up!*
 '''
 
 # 5. Saving output to MongoDB
