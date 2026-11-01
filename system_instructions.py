@@ -148,7 +148,7 @@ principles explicitly.
 
 I just want you to express a free flow reasoning. Be brief, just a few sentences.
 Output exactly 3 BULLET POINTS. These bullet points must be SHORT - a couple of sentences
-each at most.
+each at most. Use a PLAIN, STRAIGHTFORWARD language - no unnecessary "big words".
 
 Your output is your reflection in Markdown format, and nothing else.
 
