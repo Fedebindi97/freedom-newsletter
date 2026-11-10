@@ -14,6 +14,7 @@ import certifi
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
+MODEL = 'gemini-3.8-flash'
 
 conn_string = os.getenv("MONGO_STRING")
 ca = certifi.where()
@@ -33,8 +34,8 @@ mailchimp_client.set_config({
 # 0. Summarizer agent summarizes previous issues of the newsletter
 previous_issues = database["newsletter-texts"].find({}, {"ts":1, "text": 1, "_id": 0}).sort("ts", -1).limit(3).to_list()
 summarizer = client.interactions.create(
-    model="gemini-3.5-flash",
-    input=previous_issues,
+    model=MODEL,
+    input=str(previous_issues),
     system_instruction=SUMMARIZER_SYSTEM_INSTRUCTIONS,
     tools=[{"type": "google_search"}]
 )
@@ -42,7 +43,7 @@ summarizer_output = summarizer.output_text
 
 # 1. Main writer agent creates first draft
 main_writer = client.interactions.create(
-    model="gemini-3.1-pro-preview",
+    model=MODEL,
     input="Execute your system instructions.",
     system_instruction=MAIN_WRITER_SYSTEM_INSTRUCTIONS,
     tools=[{"type": "google_search"}]
@@ -63,7 +64,7 @@ for step in main_writer.steps:
 
 # 2. Link injecter injects links
 link_injecter = client.interactions.create(
-    model="gemini-3.5-flash",
+    model=MODEL,
     input=f'''
         MAIN WRITER DRAFT:
         {main_writer_output}
@@ -77,7 +78,7 @@ link_injecter_output = link_injecter.output_text
 
 # 3. Philosopher agent makes a structured reflection on freedom
 philosopher = client.interactions.create(
-    model="gemini-3.1-pro-preview",
+    model=MODEL,
     input=f'''
     CURRENT ISSUE:
     {link_injecter_output}
@@ -92,14 +93,14 @@ philosopher_output = philosopher.output_text
 # 4. Editor agents edit the outputs of the fact checker and philospher
 
 editor_1 = client.interactions.create(
-    model="gemini-3.5-flash",
+    model=MODEL,
     input=link_injecter_output,
     system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
 )
 editor_output_news = editor_1.output_text
 
 editor_2 = client.interactions.create(
-    model="gemini-3.5-flash",
+    model=MODEL,
     input=philosopher_output,
     system_instruction=EDITOR_SYSTEM_INSTRUCTIONS
 )
